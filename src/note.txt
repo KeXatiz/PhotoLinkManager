@@ -26,3 +26,17 @@ Car → class (template)
 myCar → object (real thing)
 
 =================================================================================================
+.getAbsolutePath()
+
+Without getAbsolutePath()
+File file = new File("photos/image.jpg");
+System.out.println("Path: " + file);
+
+= Path: photos/image.jpg
+
+
+With getAbsolutePath()
+File file = new File("photos/image.jpg");
+System.out.println("Absolute Path: " + file.getAbsolutePath());
+
+= Absolute Path: C:\Users\user\Desktop\xxx\Java\PhotoLinkManager\photos\image.jpg
