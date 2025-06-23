@@ -1,0 +1,28 @@
+note along the way
+=====================================================================================================
+- Class vs Object (for reference https://www.w3schools.com/java/java_classes.asp)
+class(smtg like template/blueprint) has variable/attributes and it can do methods/functions
+object(smtg like real thing built from that class) - an object actual version of that class created using the "new" keywords
+
+Use new when you want to interact with (or create) an object from a class.
+Because new:
+- Allocates memory for the object
+- Initializes it using the class template
+- Gives you a usable instance you can call methods on or store data in
+
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Vroom!");
+    }
+}
+
+Car myCar = new Car();  // ← This is the object
+myCar.color = "Red";
+myCar.drive();          // Output: Vroom!
+
+
+Car → class (template)
+myCar → object (real thing)
+
+=================================================================================================
