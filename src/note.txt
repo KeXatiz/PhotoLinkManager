@@ -40,3 +40,62 @@ File file = new File("photos/image.jpg");
 System.out.println("Absolute Path: " + file.getAbsolutePath());
 
 = Absolute Path: C:\Users\user\Desktop\xxx\Java\PhotoLinkManager\photos\image.jpg
+
+=================================================================================================
+
+array
+
+String[] extensions = {".jpg", ".jpeg", ".png", ".heif", ".mov", ".mp4"};
+
+same thing as
+
+String[] extensions = new String[6];
+extensions[0] = ".jpg";
+extensions[1] = ".jpeg";
+extensions[2] = ".png";
+extensions[3] = ".heif";
+extensions[4] = ".mov";
+extensions[5] = ".mp4";
+
+=================================================================================================
+
+Why declare "throws IOException"
+- commonly used when a program read input from files or streams and these operations can encounter errors:
+> File not found
+> unable to read file contents
+> Network connection issues (if dealing with networking streams)
+
+eg
+
+public static void main(String[] args){
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    try{
+        String input = br.readLine();
+        system.out.println("You typed: " + input);
+    } catch(IOException e){
+        System.out.println("An I/O error occurred: " + e.getMessage());
+    }
+}
+
+or
+
+public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String input = br.readLine();
+    System.out.println("You typed: " + input);
+}
+
+readLine() is a method provided by Java's BufferedReader class. It reads a line of text from an input stream, such as from the console (keyboard) or a file.
+
+InputStreamReader is a Java class used to bridge between byte streams and character streams. It converts bytes (typically from input sources like the keyboard, files, or network connections) into characters based on a specified or default character encoding (such as UTF-8).
+- Byte Stream - Images, Video, Audio
+- Chracter Stream - Documents, text files
+
+BufferedReader - Efficiently reads characters or lines - (Type) Character Stream
+~~~~~~~
+InputStream input = System.in;
+InputStreamReader reader = new InputStreamReader(input); // converts bytes to chars  When user types "Hello", the computer sees it initially as bytes (e.g., 72 101 108 108 111). InputStreamReader converts these byte values into the characters H e l l o.
+BufferedReader br = new bufferedReader(reader); // buffers input for efficient reading
+
+String line = br.readLine(); //reads text line by line
+~~~~~~~
